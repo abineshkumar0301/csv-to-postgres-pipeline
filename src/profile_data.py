@@ -1,44 +1,138 @@
-import pandas as pd 
+import logging
+from pathlib import Path
 
-file_path = "data/input/Online Retail.csv"
+import pandas as pd
 
-df = pd.read_csv(file_path)
+INPUT_FILE = Path("data/input/Online Retail.csv")
 
-print(df.head())
+LOG_DIR = Path("logs")
+LOG_FILE = LOG_DIR / "profile.log"
 
-# print(df.shape)
+def configure_logging() -> None:
 
-# print(df.columns.tolist())
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-# print(df.dtypes)
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG)
 
-# print(df.isnull().sum())
+    # Prevent duplicate handlers if this function is called again.
+    if root_logger.handlers:
+        return
 
-# print(df.duplicated().sum())
+    formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
 
-# cancelled = df["InvoiceNo"].astype(str).str.startswith("C")
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(formatter)
 
-# sales = df[~cancelled]
+    file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(formatter)
 
-# print(len(sales))
+    root_logger.addHandler(console_handler)
+    root_logger.addHandler(file_handler)
 
-# print(cancelled.sum())
+logger = logging.getLogger(__name__)
 
-# print(len(df.fillna({"CustomerID": "Unknown"}).query("UnitPrice <= 0")))
+def load_data(file_path: Path) -> pd.DataFrame:
 
-# print(df.query("Quantity <= 0").head(10))
-# print(len(df.query("Quantity <= 0").head(10)))
+    logger.info("Loading data from %s", file_path)
 
-# print(df["Quantity"].isnull().sum())
-# print(df["CustomerID"].isnull().sum())
-# print(df["Country"].isnull().sum())
-# print(df["InvoiceNo"].isnull().sum())
-# print(df["StockCode"].isnull().sum())
-# print(df["Description"].isnull().sum())
-# print(df["InvoiceDate"].isnull().sum())
+    if not file_path.exists():
+        logger.error("Input file not found: %s", file_path)
+        raise FileNotFoundError(f"Input file not found: {file_path}")
 
-# print()
-# print(df[df["CustomerID"].isnull()]["Description"].isnull().sum())
+    df = pd.read_csv(file_path)
 
-print((~df["StockCode"].astype(str).str.match(r".*[A-Z]")).sum())
+    logger.info("Loaded %s rows and %s columns", *df.shape)
 
+    return df
+
+def profile_data(df: pd.DataFrame) -> None:
+
+    logger.info("Starting data profiling")
+
+    print("\n========== DATA PROFILE ==========")
+
+    print("\nShape:")
+    print(df.shape)
+
+    logger.info("Dataset shape: %s rows and %s columns", *df.shape) # * is for unpacking an iterable. shape returns a tuple of (row, col) 
+
+    print("\nColumns:")
+    print(df.columns.tolist())
+
+    logger.info("Dataset contains %s columns", len(df.columns))
+
+    print("\nData Types:")
+    print(df.dtypes)
+
+    missing_values = df.isnull().sum()
+
+    print("\nMissing Values:")
+    print(missing_values)
+
+    total_missing = int(missing_values.sum())
+
+    logger.info("Total missing values: %s", total_missing)
+
+    # Log individual columns containing missing values.
+    for column, count in missing_values.items():
+        if count > 0:
+            logger.warning("Column '%s' contains %s missing values", column, count)
+
+    duplicate_count = int(df.duplicated().sum())
+
+    print("\nDuplicate Rows:")
+    print(duplicate_count)
+
+    if duplicate_count > 0:
+        logger.warning("Found %s duplicate rows", duplicate_count)
+    else:
+        logger.info("No duplicate rows found")
+
+    cancelled = df["InvoiceNo"].astype(str).str.startswith("C")
+
+    cancelled_count = int(cancelled.sum())
+
+    print("\nCancelled Orders:")
+    print(cancelled_count)
+
+    if cancelled_count > 0:
+        logger.warning("Found %s cancelled transactions", cancelled_count)
+    else:
+        logger.info("No cancelled transactions found")
+
+    unique_values = {
+        "InvoiceNo": int(df["InvoiceNo"].nunique()),
+        "StockCode": int(df["StockCode"].nunique()),
+        "Description": int(df["Description"].nunique()),
+        "CustomerID": int(df["CustomerID"].nunique()),
+        "Country": int(df["Country"].nunique()),
+    }
+
+    print("\nUnique Values:")
+
+    for column, count in unique_values.items():
+        print(f"{column:<12}: {count}")
+
+        logger.debug("Column '%s' contains %s unique values", column, count)
+
+    logger.info("Data profiling completed")
+
+def main() -> None:
+
+    configure_logging()
+    logger.info("========== DATA PROFILING PIPELINE STARTED ==========")
+
+    try:
+        df = load_data(INPUT_FILE)
+        profile_data(df)
+        logger.info("========== DATA PROFILING PIPELINE COMPLETED ==========")
+
+    except Exception:
+        logger.exception("Data profiling pipeline failed")
+        raise        # re raising the exception so that i can know that there is a problem... If it is not re raised, then the error is in log, but the program completes fine.
+
+if __name__ == "__main__":
+    main()

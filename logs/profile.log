@@ -1,0 +1,36 @@
+2026-08-17 14:13:22,859 | INFO | __main__ | ========== DATA PROFILING PIPELINE STARTED ==========
+2026-08-17 14:13:22,859 | INFO | __main__ | Loading data from data/input/Online Retail.csv
+2026-08-17 14:13:23,724 | INFO | __main__ | Loaded 541909 rows and 8 columns
+2026-08-17 14:13:23,724 | INFO | __main__ | Starting data profiling
+2026-08-17 14:13:23,725 | INFO | __main__ | Dataset shape: 541909 rows and 8 columns
+2026-08-17 14:13:23,725 | INFO | __main__ | Dataset contains 8 columns
+2026-08-17 14:13:23,860 | INFO | __main__ | Total missing values: 136534
+2026-08-17 14:13:23,860 | WARNING | __main__ | Column 'Description' contains 1454 missing values
+2026-08-17 14:13:23,860 | WARNING | __main__ | Column 'CustomerID' contains 135080 missing values
+2026-08-17 14:13:24,242 | WARNING | __main__ | Found 5268 duplicate rows
+2026-08-17 14:13:24,300 | WARNING | __main__ | Found 9288 cancelled transactions
+2026-08-17 14:13:24,394 | DEBUG | __main__ | Column 'InvoiceNo' contains 25900 unique values
+2026-08-17 14:13:24,394 | DEBUG | __main__ | Column 'StockCode' contains 4070 unique values
+2026-08-17 14:13:24,394 | DEBUG | __main__ | Column 'Description' contains 4223 unique values
+2026-08-17 14:13:24,394 | DEBUG | __main__ | Column 'CustomerID' contains 4372 unique values
+2026-08-17 14:13:24,394 | DEBUG | __main__ | Column 'Country' contains 38 unique values
+2026-08-17 14:13:24,394 | INFO | __main__ | Data profiling completed
+2026-08-17 14:13:24,395 | INFO | __main__ | ========== DATA PROFILING PIPELINE COMPLETED ==========
+2026-08-17 14:38:50,077 | INFO | __main__ | ========== DATA PROFILING PIPELINE STARTED ==========
+2026-08-17 14:38:50,078 | INFO | __main__ | Loading data from data/input/Online Retail.csv
+2026-08-17 14:38:51,516 | INFO | __main__ | Loaded 541909 rows and 8 columns
+2026-08-17 14:38:51,517 | INFO | __main__ | Starting data profiling
+2026-08-17 14:38:51,518 | INFO | __main__ | Dataset shape: 541909 rows and 8 columns
+2026-08-17 14:38:51,520 | INFO | __main__ | Dataset contains 8 columns
+2026-08-17 14:38:51,731 | INFO | __main__ | Total missing values: 136534
+2026-08-17 14:38:51,731 | WARNING | __main__ | Column 'Description' contains 1454 missing values
+2026-08-17 14:38:51,731 | WARNING | __main__ | Column 'CustomerID' contains 135080 missing values
+2026-08-17 14:38:52,159 | WARNING | __main__ | Found 5268 duplicate rows
+2026-08-17 14:38:52,232 | WARNING | __main__ | Found 9288 cancelled transactions
+2026-08-17 14:38:52,481 | DEBUG | __main__ | Column 'InvoiceNo' contains 25900 unique values
+2026-08-17 14:38:52,481 | DEBUG | __main__ | Column 'StockCode' contains 4070 unique values
+2026-08-17 14:38:52,482 | DEBUG | __main__ | Column 'Description' contains 4223 unique values
+2026-08-17 14:38:52,482 | DEBUG | __main__ | Column 'CustomerID' contains 4372 unique values
+2026-08-17 14:38:52,483 | DEBUG | __main__ | Column 'Country' contains 38 unique values
+2026-08-17 14:38:52,483 | INFO | __main__ | Data profiling completed
+2026-08-17 14:38:52,483 | INFO | __main__ | ========== DATA PROFILING PIPELINE COMPLETED ==========
