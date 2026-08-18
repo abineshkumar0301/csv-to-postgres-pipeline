@@ -6,7 +6,7 @@ import pandas as pd
 INPUT_FILE = Path("data/input/Online Retail.csv")
 
 LOG_DIR = Path("logs")
-LOG_FILE = LOG_DIR / "profile.log"
+LOG_FILE = LOG_DIR / "pipeline.log"
 
 def configure_logging() -> None:
 
