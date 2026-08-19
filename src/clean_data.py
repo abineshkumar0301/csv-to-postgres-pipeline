@@ -1,7 +1,6 @@
 import logging
 from pathlib import Path
 import pandas as pd
-# from utils.logging_config import configure_logging
 
 INPUT_FILE = Path("data/input/Online Retail.csv")
 
@@ -17,6 +16,30 @@ CANCELLED_FILE = CANCELLED_DIR / "online_retail_cancelled.csv"
 
 LOG_DIR = Path("logs")
 LOG_FILE = LOG_DIR / "pipeline.log"
+
+CLEANED_FILE = CLEANED_DIR / "online_retail_cleaned.csv"
+CLEANED_JSON_FILE = CLEANED_DIR / "online_retail_cleaned.json"
+
+REJECTED_FILE = REJECTED_DIR / "online_retail_rejected.csv"
+CANCELLED_FILE = CANCELLED_DIR / "online_retail_cancelled.csv"
+
+def save_json(df: pd.DataFrame) -> None:
+
+    CLEANED_DIR.mkdir(parents=True, exist_ok=True)
+
+    df.to_json(
+        CLEANED_JSON_FILE,
+        orient="records",
+        lines=True,
+        date_format="iso",
+        force_ascii=False
+    )
+
+    logger.info(
+        "Saved %s records to %s",
+        len(df),
+        CLEANED_JSON_FILE,
+    )
 
 def configure_logging() -> None:
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -242,6 +265,8 @@ def main() -> None:
 
         save_data(valid_df=valid_df, rejected_df=rejected_df, cancelled_df=cancelled_df)
 
+        save_json(valid_df)
+
         logger.info("Original records: %s", original_count)
 
         logger.info("Cleaned records: %s", len(valid_df))
@@ -251,6 +276,7 @@ def main() -> None:
         logger.info("Cancelled records: %s", len(cancelled_df))
 
         logger.info("========== DATA CLEANING PIPELINE COMPLETED ==========")
+
 
     except Exception:
         logger.exception("Data cleaning pipeline failed")

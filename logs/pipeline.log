@@ -1,43 +1,44 @@
-2026-08-18 16:42:10,870 | INFO | __main__ | ========== DATA PROFILING PIPELINE STARTED ==========
-2026-08-18 16:42:10,871 | INFO | __main__ | Loading data from data/input/Online Retail.csv
-2026-08-18 16:42:11,698 | INFO | __main__ | Loaded 541909 rows and 8 columns
-2026-08-18 16:42:11,698 | INFO | __main__ | Starting data profiling
-2026-08-18 16:42:11,699 | INFO | __main__ | Dataset shape: 541909 rows and 8 columns
-2026-08-18 16:42:11,699 | INFO | __main__ | Dataset contains 8 columns
-2026-08-18 16:42:11,819 | INFO | __main__ | Total missing values: 136534
-2026-08-18 16:42:11,819 | WARNING | __main__ | Column 'Description' contains 1454 missing values
-2026-08-18 16:42:11,819 | WARNING | __main__ | Column 'CustomerID' contains 135080 missing values
-2026-08-18 16:42:12,221 | WARNING | __main__ | Found 5268 duplicate rows
-2026-08-18 16:42:12,285 | WARNING | __main__ | Found 9288 cancelled transactions
-2026-08-18 16:42:12,376 | DEBUG | __main__ | Column 'InvoiceNo' contains 25900 unique values
-2026-08-18 16:42:12,376 | DEBUG | __main__ | Column 'StockCode' contains 4070 unique values
-2026-08-18 16:42:12,377 | DEBUG | __main__ | Column 'Description' contains 4223 unique values
-2026-08-18 16:42:12,377 | DEBUG | __main__ | Column 'CustomerID' contains 4372 unique values
-2026-08-18 16:42:12,377 | DEBUG | __main__ | Column 'Country' contains 38 unique values
-2026-08-18 16:42:12,377 | INFO | __main__ | Data profiling completed
-2026-08-18 16:42:12,377 | INFO | __main__ | ========== DATA PROFILING PIPELINE COMPLETED ==========
-2026-08-18 16:42:32,242 | INFO | __main__ | ========== DATA CLEANING PIPELINE STARTED ==========
-2026-08-18 16:42:32,242 | INFO | __main__ | Loading data from data/input/Online Retail.csv
-2026-08-18 16:42:32,948 | INFO | __main__ | Loaded 541909 rows and 8 columns
-2026-08-18 16:42:32,949 | INFO | __main__ | Starting data validation
-2026-08-18 16:42:33,085 | INFO | __main__ | Identified 9288 cancelled transactions
-2026-08-18 16:42:33,119 | INFO | __main__ | Found 1454 non-cancelled records with missing Description
-2026-08-18 16:42:33,139 | INFO | __main__ | Found 134697 non-cancelled records with missing CustomerID
-2026-08-18 16:42:33,149 | INFO | __main__ | Found 1336 non-cancelled records with invalid Quantity
-2026-08-18 16:42:33,154 | INFO | __main__ | Found 2517 non-cancelled records with invalid UnitPrice
-2026-08-18 16:42:33,189 | INFO | __main__ | Found 0 records with missing InvoiceNo
-2026-08-18 16:42:33,317 | INFO | __main__ | Validation completed: 397884 valid, 134737 rejected, 9288 cancelled
-2026-08-18 16:42:33,317 | INFO | __main__ | Separating records
-2026-08-18 16:42:33,453 | INFO | __main__ | Separated 397884 valid records
-2026-08-18 16:42:33,453 | INFO | __main__ | Separated 134737 rejected records
-2026-08-18 16:42:33,453 | INFO | __main__ | Separated 9288 cancelled records
-2026-08-18 16:42:33,453 | INFO | __main__ | Record reconciliation: 397884 valid + 134737 rejected + 9288 cancelled = 541909
-2026-08-18 16:42:33,453 | INFO | __main__ | Record reconciliation successful
-2026-08-18 16:42:35,014 | INFO | __main__ | Saved 397884 valid records to data/output/cleaned/online_retail_cleaned.csv
-2026-08-18 16:42:35,708 | INFO | __main__ | Saved 134737 rejected records to data/output/rejected/online_retail_rejected.csv
-2026-08-18 16:42:35,766 | INFO | __main__ | Saved 9288 cancelled records to data/output/cancelled/online_retail_cancelled.csv
-2026-08-18 16:42:35,766 | INFO | __main__ | Original records: 541909
-2026-08-18 16:42:35,767 | INFO | __main__ | Cleaned records: 397884
-2026-08-18 16:42:35,767 | INFO | __main__ | Rejected records: 134737
-2026-08-18 16:42:35,767 | INFO | __main__ | Cancelled records: 9288
-2026-08-18 16:42:35,767 | INFO | __main__ | ========== DATA CLEANING PIPELINE COMPLETED ==========
+2026-08-19 15:50:06,839 | INFO | __main__ | ========== DATA PROFILING PIPELINE STARTED ==========
+2026-08-19 15:50:06,839 | INFO | __main__ | Loading data from data/input/Online Retail.csv
+2026-08-19 15:50:07,295 | INFO | __main__ | Loaded 541909 rows and 8 columns
+2026-08-19 15:50:07,295 | INFO | __main__ | Starting data profiling
+2026-08-19 15:50:07,296 | INFO | __main__ | Dataset shape: 541909 rows and 8 columns
+2026-08-19 15:50:07,296 | INFO | __main__ | Dataset contains 8 columns
+2026-08-19 15:50:07,379 | INFO | __main__ | Total missing values: 136534
+2026-08-19 15:50:07,380 | WARNING | __main__ | Column 'Description' contains 1454 missing values
+2026-08-19 15:50:07,380 | WARNING | __main__ | Column 'CustomerID' contains 135080 missing values
+2026-08-19 15:50:07,606 | WARNING | __main__ | Found 5268 duplicate rows
+2026-08-19 15:50:07,645 | WARNING | __main__ | Found 9288 cancelled transactions
+2026-08-19 15:50:07,697 | DEBUG | __main__ | Column 'InvoiceNo' contains 25900 unique values
+2026-08-19 15:50:07,697 | DEBUG | __main__ | Column 'StockCode' contains 4070 unique values
+2026-08-19 15:50:07,697 | DEBUG | __main__ | Column 'Description' contains 4223 unique values
+2026-08-19 15:50:07,697 | DEBUG | __main__ | Column 'CustomerID' contains 4372 unique values
+2026-08-19 15:50:07,697 | DEBUG | __main__ | Column 'Country' contains 38 unique values
+2026-08-19 15:50:07,697 | INFO | __main__ | Data profiling completed
+2026-08-19 15:50:07,697 | INFO | __main__ | ========== DATA PROFILING PIPELINE COMPLETED ==========
+2026-08-19 15:50:16,059 | INFO | __main__ | ========== DATA CLEANING PIPELINE STARTED ==========
+2026-08-19 15:50:16,059 | INFO | __main__ | Loading data from data/input/Online Retail.csv
+2026-08-19 15:50:16,444 | INFO | __main__ | Loaded 541909 rows and 8 columns
+2026-08-19 15:50:16,444 | INFO | __main__ | Starting data validation
+2026-08-19 15:50:16,513 | INFO | __main__ | Identified 9288 cancelled transactions
+2026-08-19 15:50:16,532 | INFO | __main__ | Found 1454 non-cancelled records with missing Description
+2026-08-19 15:50:16,548 | INFO | __main__ | Found 134697 non-cancelled records with missing CustomerID
+2026-08-19 15:50:16,552 | INFO | __main__ | Found 1336 non-cancelled records with invalid Quantity
+2026-08-19 15:50:16,556 | INFO | __main__ | Found 2517 non-cancelled records with invalid UnitPrice
+2026-08-19 15:50:16,577 | INFO | __main__ | Found 0 records with missing InvoiceNo
+2026-08-19 15:50:16,691 | INFO | __main__ | Validation completed: 397884 valid, 134737 rejected, 9288 cancelled
+2026-08-19 15:50:16,692 | INFO | __main__ | Separating records
+2026-08-19 15:50:16,780 | INFO | __main__ | Separated 397884 valid records
+2026-08-19 15:50:16,780 | INFO | __main__ | Separated 134737 rejected records
+2026-08-19 15:50:16,780 | INFO | __main__ | Separated 9288 cancelled records
+2026-08-19 15:50:16,780 | INFO | __main__ | Record reconciliation: 397884 valid + 134737 rejected + 9288 cancelled = 541909
+2026-08-19 15:50:16,780 | INFO | __main__ | Record reconciliation successful
+2026-08-19 15:50:17,824 | INFO | __main__ | Saved 397884 valid records to data/output/cleaned/online_retail_cleaned.csv
+2026-08-19 15:50:18,364 | INFO | __main__ | Saved 134737 rejected records to data/output/rejected/online_retail_rejected.csv
+2026-08-19 15:50:18,406 | INFO | __main__ | Saved 9288 cancelled records to data/output/cancelled/online_retail_cancelled.csv
+2026-08-19 15:50:19,807 | INFO | __main__ | Saved 397884 records to data/output/cleaned/online_retail_cleaned.json
+2026-08-19 15:50:19,808 | INFO | __main__ | Original records: 541909
+2026-08-19 15:50:19,808 | INFO | __main__ | Cleaned records: 397884
+2026-08-19 15:50:19,808 | INFO | __main__ | Rejected records: 134737
+2026-08-19 15:50:19,808 | INFO | __main__ | Cancelled records: 9288
+2026-08-19 15:50:19,808 | INFO | __main__ | ========== DATA CLEANING PIPELINE COMPLETED ==========
