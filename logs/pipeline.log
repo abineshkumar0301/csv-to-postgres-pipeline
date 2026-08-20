@@ -42,3 +42,107 @@
 2026-08-19 15:50:19,808 | INFO | __main__ | Rejected records: 134737
 2026-08-19 15:50:19,808 | INFO | __main__ | Cancelled records: 9288
 2026-08-19 15:50:19,808 | INFO | __main__ | ========== DATA CLEANING PIPELINE COMPLETED ==========
+2026-08-20 18:13:22,920 | INFO | __main__ | ========== POSTGRESQL DATA LOAD STARTED ==========
+2026-08-20 18:13:22,922 | INFO | __main__ | Connecting to PostgreSQL database 'online_retail_db'
+2026-08-20 18:13:22,943 | INFO | __main__ | PostgreSQL connection established successfully
+2026-08-20 18:13:22,947 | INFO | __main__ | PostgreSQL connection test successful
+2026-08-20 18:13:22,947 | INFO | __main__ | PostgreSQL version: PostgreSQL 18.4 (Ubuntu 18.4-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit
+2026-08-20 18:13:22,955 | INFO | __main__ | Table 'online_retail' exists
+2026-08-20 18:13:22,956 | INFO | __main__ | PostgreSQL connection closed
+2026-08-20 18:13:22,956 | INFO | __main__ | Loading JSON data from data/output/cleaned/online_retail_cleaned.json
+2026-08-20 18:13:25,191 | INFO | __main__ | Loaded 397884 records from JSON
+2026-08-20 18:13:27,660 | INFO | __main__ | Prepared 397884 records for PostgreSQL
+2026-08-20 18:13:27,660 | INFO | __main__ | Connecting to PostgreSQL database 'online_retail_db'
+2026-08-20 18:13:27,676 | INFO | __main__ | PostgreSQL connection established successfully
+2026-08-20 18:13:27,677 | INFO | __main__ | Clearing existing records from online_retail
+2026-08-20 18:13:27,686 | INFO | __main__ | Existing records cleared
+2026-08-20 18:13:27,686 | INFO | __main__ | Starting batch insertion of 397884 records
+2026-08-20 18:13:27,777 | INFO | __main__ | Inserted 5000 / 397884 records
+2026-08-20 18:13:27,868 | INFO | __main__ | Inserted 10000 / 397884 records
+2026-08-20 18:13:27,952 | INFO | __main__ | Inserted 15000 / 397884 records
+2026-08-20 18:13:28,028 | INFO | __main__ | Inserted 20000 / 397884 records
+2026-08-20 18:13:28,109 | INFO | __main__ | Inserted 25000 / 397884 records
+2026-08-20 18:13:28,201 | INFO | __main__ | Inserted 30000 / 397884 records
+2026-08-20 18:13:28,301 | INFO | __main__ | Inserted 35000 / 397884 records
+2026-08-20 18:13:28,427 | INFO | __main__ | Inserted 40000 / 397884 records
+2026-08-20 18:13:28,498 | INFO | __main__ | Inserted 45000 / 397884 records
+2026-08-20 18:13:28,574 | INFO | __main__ | Inserted 50000 / 397884 records
+2026-08-20 18:13:28,657 | INFO | __main__ | Inserted 55000 / 397884 records
+2026-08-20 18:13:28,740 | INFO | __main__ | Inserted 60000 / 397884 records
+2026-08-20 18:13:28,817 | INFO | __main__ | Inserted 65000 / 397884 records
+2026-08-20 18:13:28,903 | INFO | __main__ | Inserted 70000 / 397884 records
+2026-08-20 18:13:28,981 | INFO | __main__ | Inserted 75000 / 397884 records
+2026-08-20 18:13:29,058 | INFO | __main__ | Inserted 80000 / 397884 records
+2026-08-20 18:13:29,135 | INFO | __main__ | Inserted 85000 / 397884 records
+2026-08-20 18:13:29,214 | INFO | __main__ | Inserted 90000 / 397884 records
+2026-08-20 18:13:29,288 | INFO | __main__ | Inserted 95000 / 397884 records
+2026-08-20 18:13:29,370 | INFO | __main__ | Inserted 100000 / 397884 records
+2026-08-20 18:13:29,445 | INFO | __main__ | Inserted 105000 / 397884 records
+2026-08-20 18:13:29,527 | INFO | __main__ | Inserted 110000 / 397884 records
+2026-08-20 18:13:29,599 | INFO | __main__ | Inserted 115000 / 397884 records
+2026-08-20 18:13:29,705 | INFO | __main__ | Inserted 120000 / 397884 records
+2026-08-20 18:13:29,783 | INFO | __main__ | Inserted 125000 / 397884 records
+2026-08-20 18:13:29,866 | INFO | __main__ | Inserted 130000 / 397884 records
+2026-08-20 18:13:29,935 | INFO | __main__ | Inserted 135000 / 397884 records
+2026-08-20 18:13:30,024 | INFO | __main__ | Inserted 140000 / 397884 records
+2026-08-20 18:13:30,102 | INFO | __main__ | Inserted 145000 / 397884 records
+2026-08-20 18:13:30,176 | INFO | __main__ | Inserted 150000 / 397884 records
+2026-08-20 18:13:30,256 | INFO | __main__ | Inserted 155000 / 397884 records
+2026-08-20 18:13:30,336 | INFO | __main__ | Inserted 160000 / 397884 records
+2026-08-20 18:13:30,438 | INFO | __main__ | Inserted 165000 / 397884 records
+2026-08-20 18:13:30,541 | INFO | __main__ | Inserted 170000 / 397884 records
+2026-08-20 18:13:30,626 | INFO | __main__ | Inserted 175000 / 397884 records
+2026-08-20 18:13:30,698 | INFO | __main__ | Inserted 180000 / 397884 records
+2026-08-20 18:13:30,778 | INFO | __main__ | Inserted 185000 / 397884 records
+2026-08-20 18:13:30,853 | INFO | __main__ | Inserted 190000 / 397884 records
+2026-08-20 18:13:30,935 | INFO | __main__ | Inserted 195000 / 397884 records
+2026-08-20 18:13:31,012 | INFO | __main__ | Inserted 200000 / 397884 records
+2026-08-20 18:13:31,095 | INFO | __main__ | Inserted 205000 / 397884 records
+2026-08-20 18:13:31,189 | INFO | __main__ | Inserted 210000 / 397884 records
+2026-08-20 18:13:31,266 | INFO | __main__ | Inserted 215000 / 397884 records
+2026-08-20 18:13:31,347 | INFO | __main__ | Inserted 220000 / 397884 records
+2026-08-20 18:13:31,423 | INFO | __main__ | Inserted 225000 / 397884 records
+2026-08-20 18:13:31,500 | INFO | __main__ | Inserted 230000 / 397884 records
+2026-08-20 18:13:31,575 | INFO | __main__ | Inserted 235000 / 397884 records
+2026-08-20 18:13:31,658 | INFO | __main__ | Inserted 240000 / 397884 records
+2026-08-20 18:13:31,734 | INFO | __main__ | Inserted 245000 / 397884 records
+2026-08-20 18:13:31,815 | INFO | __main__ | Inserted 250000 / 397884 records
+2026-08-20 18:13:31,893 | INFO | __main__ | Inserted 255000 / 397884 records
+2026-08-20 18:13:31,968 | INFO | __main__ | Inserted 260000 / 397884 records
+2026-08-20 18:13:32,046 | INFO | __main__ | Inserted 265000 / 397884 records
+2026-08-20 18:13:32,128 | INFO | __main__ | Inserted 270000 / 397884 records
+2026-08-20 18:13:32,206 | INFO | __main__ | Inserted 275000 / 397884 records
+2026-08-20 18:13:32,284 | INFO | __main__ | Inserted 280000 / 397884 records
+2026-08-20 18:13:32,362 | INFO | __main__ | Inserted 285000 / 397884 records
+2026-08-20 18:13:32,440 | INFO | __main__ | Inserted 290000 / 397884 records
+2026-08-20 18:13:32,527 | INFO | __main__ | Inserted 295000 / 397884 records
+2026-08-20 18:13:32,604 | INFO | __main__ | Inserted 300000 / 397884 records
+2026-08-20 18:13:32,679 | INFO | __main__ | Inserted 305000 / 397884 records
+2026-08-20 18:13:32,758 | INFO | __main__ | Inserted 310000 / 397884 records
+2026-08-20 18:13:32,833 | INFO | __main__ | Inserted 315000 / 397884 records
+2026-08-20 18:13:32,913 | INFO | __main__ | Inserted 320000 / 397884 records
+2026-08-20 18:13:32,991 | INFO | __main__ | Inserted 325000 / 397884 records
+2026-08-20 18:13:33,070 | INFO | __main__ | Inserted 330000 / 397884 records
+2026-08-20 18:13:33,148 | INFO | __main__ | Inserted 335000 / 397884 records
+2026-08-20 18:13:33,226 | INFO | __main__ | Inserted 340000 / 397884 records
+2026-08-20 18:13:33,303 | INFO | __main__ | Inserted 345000 / 397884 records
+2026-08-20 18:13:33,383 | INFO | __main__ | Inserted 350000 / 397884 records
+2026-08-20 18:13:33,461 | INFO | __main__ | Inserted 355000 / 397884 records
+2026-08-20 18:13:33,540 | INFO | __main__ | Inserted 360000 / 397884 records
+2026-08-20 18:13:33,629 | INFO | __main__ | Inserted 365000 / 397884 records
+2026-08-20 18:13:33,705 | INFO | __main__ | Inserted 370000 / 397884 records
+2026-08-20 18:13:33,782 | INFO | __main__ | Inserted 375000 / 397884 records
+2026-08-20 18:13:33,866 | INFO | __main__ | Inserted 380000 / 397884 records
+2026-08-20 18:13:33,942 | INFO | __main__ | Inserted 385000 / 397884 records
+2026-08-20 18:13:34,027 | INFO | __main__ | Inserted 390000 / 397884 records
+2026-08-20 18:13:34,164 | INFO | __main__ | Inserted 395000 / 397884 records
+2026-08-20 18:13:34,220 | INFO | __main__ | Inserted 397884 / 397884 records
+2026-08-20 18:13:34,253 | INFO | __main__ | Transaction committed successfully
+2026-08-20 18:13:34,254 | INFO | __main__ | PostgreSQL connection closed
+2026-08-20 18:13:34,254 | INFO | __main__ | Connecting to PostgreSQL database 'online_retail_db'
+2026-08-20 18:13:34,268 | INFO | __main__ | PostgreSQL connection established successfully
+2026-08-20 18:13:34,300 | INFO | __main__ | Expected records: 397884
+2026-08-20 18:13:34,300 | INFO | __main__ | Loaded records: 397884
+2026-08-20 18:13:34,300 | INFO | __main__ | Record count validation successful
+2026-08-20 18:13:34,301 | INFO | __main__ | PostgreSQL connection closed
+2026-08-20 18:13:34,301 | INFO | __main__ | ========== POSTGRESQL DATA LOAD COMPLETED ==========
