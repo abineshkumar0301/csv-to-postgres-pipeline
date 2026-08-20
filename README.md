@@ -62,9 +62,12 @@ csv-to-postgres-pipeline/
 │
 ├── data/
 │   ├── input/
-│   └── raw/
+│   └── output/
 │
 ├── src/
+│   ├── profile_data.py
+│   ├── clean_data.py
+│   ├── load_data.py
 │
 ├── sql/
 │
