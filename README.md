@@ -67,8 +67,10 @@ csv-to-postgres-pipeline/
 ├── src/
 │   ├── profile_data.py
 │   ├── clean_data.py
-│   ├── load_data.py
+│   └── load_data.py
 │
+├── logs
+│   └── pipeline.log
 ├── sql/
 │
 ├── README.md
