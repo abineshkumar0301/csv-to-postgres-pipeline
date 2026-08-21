@@ -5,17 +5,19 @@ transaction data through a simple ETL pipeline.
 
 ## Project Overview
 
-In this project, I will:
+In this project, I:
 
 1. Read raw transactional data from a CSV file
 2. Inspect and profile the data for quality issues
-3. Convert the data into JSON format
-4. Load the processed data into a PostgreSQL database
-5. Query the data using SQL
+3. Clean and validate the data
+4. Separate cancelled and rejected transactions
+5. Convert the cleaned data into JSON format
+6. Load the processed data into a PostgreSQL database
+7. Query and analyze the data using SQL
 
 ## Pipeline
 
-CSV → JSON → PostgreSQL
+CSV → Inspection → Cleaning → JSON → PostgreSQL → SQL Analysis
 
 ## Dataset
 
@@ -42,16 +44,59 @@ problems such as:
 - Duplicate records
 - Cancelled orders
 - Invalid quantities
+- Invalid unit prices
 - Missing product descriptions
+- Missing invoice numbers
 
-The goal is to understand how these issues can affect a data pipeline
-and how they can be identified and handled.
+The cleaning pipeline validates the records and separates them into:
+
+- Cleaned records
+- Rejected records
+- Cancelled transactions
+
+Record reconciliation is also performed to ensure that no records are
+lost during the cleaning process.
+
+## PostgreSQL
+
+The cleaned JSON data is loaded into PostgreSQL using Python and
+Psycopg.
+
+The database loading process includes:
+
+- PostgreSQL connection testing
+- JSON data loading
+- Batch insertion
+- Transaction management
+- Rollback on failure
+- Record count validation
+- Idempotent full-refresh loading
+
+## SQL Analysis
+
+After loading the data into PostgreSQL, I perform SQL analysis using
+queries involving:
+
+- `SELECT`
+- `WHERE`
+- `ORDER BY`
+- Aggregate functions
+- `GROUP BY`
+- `HAVING`
+- `CASE`
+- Date analysis
+- Revenue analysis
+- Customer analysis
+- Product analysis
+- Country-level analysis
 
 ## Technologies
 
 - Python
+- Pandas
 - PostgreSQL
 - SQL
+- Psycopg
 - Git
 - GitHub
 
@@ -63,15 +108,21 @@ csv-to-postgres-pipeline/
 ├── data/
 │   ├── input/
 │   └── output/
+│       ├── cleaned/
+│       ├── rejected/
+│       └── cancelled/
 │
 ├── src/
 │   ├── profile_data.py
 │   ├── clean_data.py
 │   └── load_data.py
 │
-├── logs
-│   └── pipeline.log
+├── logs/
+│   ├── pipeline.log
+│   └── db.log
+│
 ├── sql/
+│   └── analysis.sql
 │
 ├── README.md
 └── requirements.txt
